@@ -1,0 +1,67 @@
+<header>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="/admin/users">Utilisateurs</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Produits
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/admin/pizza">Pizzas</a></li>
+            <li><a class="dropdown-item" href="/admin/ingredient">Ingrédients</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</header>
+<div class="container">
+<a href="/admin/pizza/add">Ajouter une nouvelle pizza</a>
+<div class="d-flex">
+<table class="table table-striped me-5">
+  <thead>
+    <tr>
+      <th scope="col">Code</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Libellé</th>
+      <th scope="col">Catégorie</th>
+      <th scope="col">Ingrédients</th>
+      <th scope="col">Version</th>
+      <th scope="col">Prix</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each data}}
+    <tr>
+      <th scope="row">{{this.code}}</th>
+      <td>{{this.name}}</td>
+      <td>{{this.libelle}}</td>
+      <td>{{this.categorie}}</td>
+      <td>
+      {{#each this.ingredients}}
+        {{this.name}}
+      {{/each}}
+      </td>
+      <td>{{this.version}}</td>
+      <td>{{this.prix}} €</td>
+      <td><a href="/admin/pizza/edit/{{this.id}}">Editer</a> || <a href="/admin/pizza/delete/{{this.id}}">Supprimer</a></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+<aside class="border border-dark ms-5" id="reelTime">
+
+</aside>
+</div>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/connection.io.js"></script>
