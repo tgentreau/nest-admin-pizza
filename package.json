@@ -27,7 +27,7 @@
     "@nestjs/platform-express": "^8.0.0",
     "@nestjs/platform-socket.io": "^9.3.4",
     "@nestjs/serve-static": "^2.2.2",
-    "@nestjs/typeorm": "^8.0.3",
+    "@nestjs/typeorm": "^8.1.4",
     "@nestjs/websockets": "^8.4.4",
     "bcrypt": "^5.0.1",
     "express-session": "^1.17.2",
@@ -36,7 +36,7 @@
     "reflect-metadata": "^0.1.13",
     "rimraf": "^4.3.1",
     "rxjs": "^7.2.0",
-    "typeorm": "^0.3.14"
+    "typeorm": "^0.3.20"
   },
   "devDependencies": {
     "@nestjs/cli": "^8.0.0",
