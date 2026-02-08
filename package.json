@@ -34,7 +34,7 @@
     "hbs": "^4.2.0",
     "mysql2": "^2.3.3",
     "reflect-metadata": "^0.1.13",
-    "rimraf": "^4.3.1",
+    "rimraf": "^6.1.1",
     "rxjs": "^7.2.0",
     "typeorm": "^0.3.14"
   },
